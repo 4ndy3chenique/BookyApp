@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_dinamico"
+    android:fillViewport="true"
+    android:padding="24dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+
+
+
+
+
+        <ImageView
+            android:id="@+id/btnFlecha"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:contentDescription="Regresar"
+            android:src="@drawable/flecha"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Título -->
+        <TextView
+            android:id="@+id/txtTitulo"
+            android:layout_width="354dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:text="Crea tu cuenta en Booky"
+            android:textColor="?android:textColorPrimary"
+            android:textSize="33sp"
+            android:textStyle="bold" />
+
+        <!-- Subtítulo -->
+        <TextView
+            android:layout_width="354dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="24dp"
+            android:gravity="center"
+            android:paddingHorizontal="12dp"
+            android:text="Un paso más para encontrar contenido que realmente te ayude a aprender."
+            android:textColor="?android:textColorSecondary"
+            android:textSize="16sp" />
+
+        <!-- Campo: Nombre completo -->
+        <EditText
+            android:id="@+id/edtNombre"
+            android:layout_width="354dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/edittext_background"
+            android:hint="Nombre Completo"
+            android:inputType="textPersonName"
+            android:maxLength="60"
+            tools:ignore="TouchTargetSizeCheck" />
+
+
+        <!-- Campo: Nombre de usuario -->
+        <EditText
+            android:id="@+id/edtUsername"
+            android:layout_width="354dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/edittext_background"
+            android:hint="Nombre Usuario"
+            android:inputType="text"
+            android:maxLength="20"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <!-- Teléfono y Fecha -->
+        <LinearLayout
+            android:layout_width="354dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:layout_marginBottom="12dp"
+            android:weightSum="2">
+
+            <EditText
+                android:id="@+id/edtTelefono"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_gravity="center"
+                android:layout_marginEnd="6dp"
+                android:layout_weight="1"
+                android:background="@drawable/edittext_background"
+                android:hint="Teléfono"
+                android:inputType="phone"
+                android:maxLength="9"
+                tools:ignore="TouchTargetSizeCheck" />
+
+
+            <EditText
+                android:id="@+id/edtFecha"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_weight="1"
+                android:background="@drawable/edittext_background"
+                android:clickable="true"
+                android:focusable="false"
+                android:hint="Fecha Nacimiento"
+                android:inputType="none"
+                tools:ignore="TouchTargetSizeCheck" />
+        </LinearLayout>
+
+        <!-- Campo: Correo -->
+        <EditText
+            android:id="@+id/edtCorreo"
+            android:layout_width="354dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/edittext_background"
+            android:hint="Correo"
+            android:inputType="textEmailAddress"
+            android:maxLength="50"
+            tools:ignore="TouchTargetSizeCheck" />
+
+
+        <!-- Campo: Contraseña -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutContrasena"
+            android:layout_width="354dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="12dp"
+            app:endIconMode="password_toggle"
+            app:boxBackgroundMode="none"
+            app:hintEnabled="false"
+            app:endIconTint="@color/IconColorEyes">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtContrasena"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:background="@drawable/edittext_background"
+                android:inputType="textPassword"
+                android:padding="16dp"
+                android:maxLength="20"
+                android:hint="Contraseña"
+                tools:ignore="TouchTargetSizeCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Campo: Confirmacion de Contraseña -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutContrasena2"
+            android:layout_width="354dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="12dp"
+            app:endIconMode="password_toggle"
+            app:boxBackgroundMode="none"
+            app:hintEnabled="false"
+            app:endIconTint="@color/IconColorEyes">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edtConfirmarContrasena"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:background="@drawable/edittext_background"
+                android:inputType="textPassword"
+                android:padding="16dp"
+                android:maxLength="20"
+                android:hint="Confirmar Contraseña"
+                tools:ignore="TouchTargetSizeCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <!-- Campo: Género -->
+        <Spinner
+            android:id="@+id/spinnerGenero"
+            android:layout_width="354dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/edittext_background"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:gravity="center_vertical"
+            android:spinnerMode="dropdown"
+            android:dropDownVerticalOffset="8dp"
+            android:dropDownHorizontalOffset="8dp"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/chkTerminos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:text="Acepto los Términos y Condiciones"
+            android:textColor="@color/black" />
+
+
+        <!-- Botón: Continuar -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnRegistrarse"
+            android:layout_width="185dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="16dp"
+            android:text="Registrarse"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textColor="@color/txtRegistro"
+            android:backgroundTint="@color/registrarse_disabled_bg"
+            android:enabled="false"
+            android:alpha="0.5"
+            app:cornerRadius="50dp" />
+    </LinearLayout>
+
+
+</ScrollView>

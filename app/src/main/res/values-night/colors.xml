@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="textPrimary">#FFFFFF</color>
+    <color name="textbtn">#000000</color>
+    <color name="textSecundary">#ffffff</color>
+    <color name="textRegistro">#ffffff</color>
+    <color name="textRegistrobtn">#709EDB</color>
+    <color name="RecomenFragB">#545454</color>
+
+
+    <color name="opcion_selected_background">#2A2A2A</color>
+    <color name="opcion_selected_stroke">#FFFFFF</color>
+    <color name="opcion_unselected_background">#2A2A2A</color>
+
+    <color name="continuar_disabled_bg">#383838</color>
+    <color name="continuar_enabled_bg">#FFFFFF</color>
+    <color name="txtcontinuar">#000000</color>
+
+    <color name="icon_selected">#FFFFFF</color>
+    <color name="icon_unselected">#FFFFFF</color>
+
+    <color name="text_selected">#FFFFFF</color>
+    <color name="text_unselected">#FFFFFF</color>
+
+    <color name="registrarse_disabled_bg">#1E1E1E</color>
+    <color name="registrarse_enabled_bg">#FFFFFF</color>
+    <color name="IconColorEyes">#FFFFFF</color>
+    <color name="txtRegistro">#000000</color>
+
+    <color name="colorBotonDialogo">#FFFFFF</color>
+
+
+</resources>

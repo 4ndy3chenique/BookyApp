@@ -1,0 +1,53 @@
+<resources>
+    <string name="app_name">Booky</string>
+
+    <!-- Google -->
+    <string name="default_web_client_id">847616220063-pttogiic0piga8bev8ugsi1dtou2sjme.apps.googleusercontent.com</string>
+
+    <!-- Facebook -->
+    <string name="facebook_app_id">660958323672089</string>
+    <string name="fb_login_protocol_scheme">fb660958323672089</string>
+    <string name="facebook_client_token">5b04e655dd39d5b6fca913fcc207b059</string>
+
+
+    <!-- onboarding -->
+    <string name="onboarding_image_desc">Imagen libros</string>
+    <string name="onboarding_title_a">Aprende Compartiendo</string>
+    <string name="onboarding_desc_a">Explora y sube trabajos académicos, ensayos e investigaciones para construir conocimiento en comunidad.</string>
+    <string name="onboarding_title_b">Organiza tu Saber</string>
+    <string name="onboarding_desc_b">Crea carpetas, agrupa por cursos o temas y encuentra fácilmente los documentos que necesitas.</string>
+    <string name="onboarding_title_c">Comunidad Académica</string>
+    <string name="onboarding_desc_c">Sigue a otros usuarios, resuelve dudas y forma parte de una red estudiantil que crece contigo.</string>
+    <!-- Bienvenida(Onboarding-D) -->
+    <string name="booky_logo">Logo Booky</string>
+    <string name="onboarding_image_descB">Ilustración de bienvenida</string>
+    <string name="onboarding_title_d">¡Bienvenidos!</string>
+    <string name="onboarding_desc_d">Accede al espacio donde tus trabajos académicos pueden ayudar a otros a aprender mejor y más rápido.</string>
+    <string name="txtOmitir">Omitir</string>
+    <string name="txtAcceso">Acceso</string>
+    <string name="txtPregunta"> ¿No tienes una cuenta? </string>
+    <string name="txtRegistro"> Regístrate </string>
+    <!-- InicioSesion(Onboarding-D) -->
+    <string name="InicioSesionB"> Inicia Sesión en Booky </string>
+    <string name="ReconFragInicio"> Elige un método para iniciar sesión </string>
+    <string name="Google"> Continuar con Google </string>
+    <string name="Facebook"> Continuar con Facebook </string>
+    <string name="User"> Continuar con Usuario </string>
+    <string name="SinCuenta"> ¿Iniciar sin una cuenta? Aquí </string>
+    <!-- Registro(Onboarding-D) -->
+    <string name="RegistroB"> Registrate en Booky </string>
+    <string name="ReconFragInicioR"> Elige un metodo para Registrarse </string>
+    <string name="UserR"> Registro con Usuario </string>
+    <string name="GoogleR"> Registro con Google </string>
+    <string name="FacebookR"> Registro con Facebook </string>
+
+    <!-- Registro(Pantalla) -->
+    <string-array name="generos_array">
+        <item>--Selecciona género--</item>
+        <item>Femenino</item>
+        <item>Masculino</item>
+        <item>Otro</item>
+    </string-array>
+
+
+</resources>

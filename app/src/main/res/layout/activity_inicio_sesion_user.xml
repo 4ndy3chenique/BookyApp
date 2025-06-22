@@ -1,0 +1,107 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="@drawable/background_dinamico">
+
+    <!-- Botón Flecha -->
+
+    <ImageView
+        android:id="@+id/btnFlecha"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="40dp"
+        android:contentDescription="Regresar"
+        android:src="@drawable/flecha"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <!-- Imagen de usuario -->
+    <ImageView
+        android:layout_width="148dp"
+        android:layout_height="148dp"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/iconiniciouser"
+        android:layout_marginBottom="24dp"
+        android:layout_gravity="center"
+        android:contentDescription="Icono usuario" />
+
+    <!-- Título -->
+    <TextView
+        android:layout_width="342dp"
+        android:layout_height="78dp"
+        android:layout_gravity="center"
+        android:text="Ingresa\ntu correo y contraseña"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:textSize="30sp"
+        android:textColor="@color/textPrimary"
+        android:layout_marginBottom="8dp" />
+
+
+
+
+    <!-- Subtítulo -->
+    <TextView
+        android:layout_width="342dp"
+        android:layout_height="78dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="24dp"
+        android:text="Conéctate con Booky y encuentra todo lo que necesitas para aprender más."
+        android:textAlignment="center"
+        android:textColor="@color/textSecundary"
+        android:textSize="18sp" />
+
+    <!-- Input Correo -->
+    <EditText
+        android:id="@+id/edtCorreo"
+        android:layout_width="354dp"
+        android:layout_height="70dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="12dp"
+        android:maxLength="50"
+        android:background="@drawable/edittext_background"
+        android:hint="Correo"
+        android:inputType="textEmailAddress" />
+
+    <!-- Input Contraseña -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="354dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="12dp"
+        android:hint="Contraseña"
+        app:endIconMode="password_toggle"
+        android:layout_gravity="center"
+        app:boxBackgroundMode="none"
+        app:endIconTint="@color/IconColorEyes"
+        app:hintEnabled="false">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtContrasena"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="@drawable/edittext_background"
+            android:hint="Contraseña"
+            android:inputType="textPassword"
+            android:padding="16dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Botón Continuar -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnIniciarSesion"
+        android:layout_width="185dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="16dp"
+        android:text="Iniciar Sesion"
+        android:textAllCaps="false"
+        android:layout_gravity="center"
+        android:textStyle="bold"
+        android:maxLength="20"
+        android:textColor="@color/txtRegistro"
+        android:backgroundTint="@color/registrarse_disabled_bg"
+        android:enabled="false"
+        android:alpha="0.5"
+        app:cornerRadius="50dp"/>
+</LinearLayout>
