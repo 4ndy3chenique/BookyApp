@@ -16,4 +16,17 @@
     <style name="CustomBottomSheetStyle" parent="Widget.Material3.BottomSheet.Modal">
         <item name="android:background">@drawable/background_bottomsheet</item>
     </style>
+
+    <style name="MenuItemStyle">
+        <item name="android:layout_width">280dp</item>
+        <item name="android:layout_height">68dp</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_gravity">end</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingStart">8dp</item>
+        <item name="android:background">?android:attr/selectableItemBackground</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style>
+
 </resources>

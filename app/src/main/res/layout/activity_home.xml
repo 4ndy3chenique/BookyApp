@@ -1,132 +1,222 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<androidx.drawerlayout.widget.DrawerLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:id="@+id/drawerLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/background_dinamico"
-    tools:context=".actividades.HomeActivity">
+    android:layout_height="match_parent">
 
-    <!-- Título -->
-    <TextView
-        android:id="@+id/txtTitulo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="¡Bienvenido!"
-        android:textSize="26sp"
-        android:textStyle="bold"
-        android:textColor="?android:textColorPrimary"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+    <!-- HEADER SUPERIOR -->
 
-    <!-- Subtítulo -->
-    <TextView
-        android:id="@+id/txtSubtitulo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Elige una opción del menú"
-        android:textSize="16sp"
-        android:textColor="?android:textColorSecondary"
-        app:layout_constraintTop_toBottomOf="@id/txtTitulo"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="8dp"/>
+    <!-- CONTENIDO CENTRAL (placeholder) -->
 
-    <!-- Botón 1: Perfil -->
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/cardPerfil"
+    <!-- NAVBAR INFERIOR -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:id="@+id/header"
         android:layout_width="0dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="32dp"
-        app:cardCornerRadius="16dp"
-        app:cardElevation="4dp"
-        app:layout_constraintTop_toBottomOf="@id/txtSubtitulo"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_height="85dp"
+        android:background="@android:color/white"
+        android:elevation="4dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="0dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintWidth_percent="0.85">
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/Menu"
+            android:layout_width="84dp"
+            android:layout_height="85dp"
+            android:background="@android:color/white"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageButton
+                android:id="@+id/btnMenu"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:background="@null"
+                android:contentDescription="Menú"
+                android:src="@drawable/ic_menu" />
+
+        </LinearLayout>
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="👤 Perfil"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_gravity="center"/>
+            android:layout_weight="1"
+            android:fontFamily="@font/alice"
+            android:gravity="center"
+            android:letterSpacing="-0.08"
+            android:text="Booky"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="35sp" />
 
-    </com.google.android.material.card.MaterialCardView>
+        <LinearLayout
+            android:id="@+id/Buscar"
+            android:layout_width="84dp"
+            android:layout_height="85dp"
+            android:background="@android:color/white"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-    <!-- Botón 2: Cursos -->
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/cardCursos"
+            <ImageButton
+                android:id="@+id/btnBuscar"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@null"
+                android:contentDescription="Buscar"
+                android:src="@drawable/ic_search" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/contenido"
         android:layout_width="0dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="16dp"
-        app:cardCornerRadius="16dp"
-        app:cardElevation="4dp"
-        app:layout_constraintTop_toBottomOf="@id/cardPerfil"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/navbar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintWidth_percent="0.85">
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/header"
+        app:layout_constraintVertical_bias="0.0" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="📚 Cursos"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_gravity="center"/>
-
-    </com.google.android.material.card.MaterialCardView>
-
-    <!-- Botón 3: Ajustes -->
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/cardAjustes"
+    <LinearLayout
+        android:id="@+id/navbar"
         android:layout_width="0dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="16dp"
-        app:cardCornerRadius="16dp"
-        app:cardElevation="4dp"
-        app:layout_constraintTop_toBottomOf="@id/cardCursos"
+        android:layout_height="93dp"
+        android:background="@android:color/white"
+        android:orientation="horizontal"
+        android:weightSum="5"
+        android:elevation="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintWidth_percent="0.85">
+        app:layout_constraintEnd_toEndOf="parent">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="⚙ Ajustes"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_gravity="center"/>
+        <!-- INICIO -->
+        <LinearLayout
+            android:id="@+id/btnInicio"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_home"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="5dp"
+                android:textColor="@color/black"
+                android:text="Inicio"
+                android:textSize="12sp"
+                android:textStyle="bold"/>
+        </LinearLayout>
 
-    </com.google.android.material.card.MaterialCardView>
+        <!-- AMIGOS -->
+        <LinearLayout
+            android:id="@+id/btnAmigos"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_amigos"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Amigos"
+                android:paddingTop="5dp"
+                android:textSize="12sp"
+                android:textStyle="bold"/>
+        </LinearLayout>
 
-    <!-- Botón 4: Cerrar sesión -->
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/cardSalir"
-        android:layout_width="0dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="16dp"
-        app:cardCornerRadius="16dp"
-        app:cardElevation="4dp"
-        app:layout_constraintTop_toBottomOf="@id/cardAjustes"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintWidth_percent="0.85">
+        <!-- CREAR -->
+        <LinearLayout
+            android:id="@+id/btnCrear"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center">
+            <ImageButton
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/boton_circular"
+                android:src="@drawable/ic_add"
+                android:contentDescription="Crear"/>
+        </LinearLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="🚪 Cerrar sesión"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_gravity="center"/>
+        <!-- FAVORITOS -->
+        <LinearLayout
+            android:id="@+id/btnFavoritos"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_favoritos"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Favoritos"
+                android:paddingTop="5dp"
+                android:textSize="12sp"
+                android:textStyle="bold"/>
+        </LinearLayout>
 
-    </com.google.android.material.card.MaterialCardView>
+        <!-- PERFIL -->
+        <LinearLayout
+            android:id="@+id/btnPerfil"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_perfil"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Perfil"
+                android:paddingTop="5dp"
+                android:textSize="12sp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <!-- MENÚ LATERAL PERSONALIZADO -->
+    <FrameLayout
+        android:id="@+id/menuContainer"
+        android:layout_width="317dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@drawable/rounded_menu_background"
+        android:elevation="8dp"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.drawerlayout.widget.DrawerLayout>
