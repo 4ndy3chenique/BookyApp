@@ -33,6 +33,5 @@ public class FavoritosFragment extends Fragment {
             header.setVisibility(View.GONE);
         }
 
-        // Aquí más adelante puedes cargar datos o configurar eventos del botón atrás
     }
 }

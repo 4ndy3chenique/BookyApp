@@ -1,5 +1,6 @@
 package com.andyechenique.booky.fragmentos;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,7 +15,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 public class CrearPublicacionBottomSheet extends BottomSheetDialogFragment {
 
     public CrearPublicacionBottomSheet() {
-        // Constructor vacío
+        // Constructor vacío requerido
     }
 
     @Nullable
@@ -32,13 +33,20 @@ public class CrearPublicacionBottomSheet extends BottomSheetDialogFragment {
         View btnCrearPublicacion = view.findViewById(R.id.btnCrearPublicacion);
 
         btnCrearCarpeta.setOnClickListener(v -> {
-            // lógica para crear carpeta
+            // Aquí luego lanzarás la lógica real
             dismiss();
         });
 
         btnCrearPublicacion.setOnClickListener(v -> {
-            // lógica para crear publicación
-            dismiss();
+            if (getActivity() != null) {
+                getActivity().getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.contenido, new CrearPublicacionFragment())
+                        .addToBackStack(null)
+                        .commit();
+                dismiss();
+            }
         });
+
     }
 }

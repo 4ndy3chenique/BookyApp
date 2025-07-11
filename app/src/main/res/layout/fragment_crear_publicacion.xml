@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/crearPublicacionLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <!-- Header con sombra -->
+    <LinearLayout
+        android:id="@+id/headerCrearPublicacion"
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:orientation="horizontal"
+        android:background="@android:color/white"
+        android:elevation="4dp"
+        android:paddingHorizontal="16dp">
+
+        <ImageView
+            android:id="@+id/btnFlecha"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_vertical"
+            android:contentDescription="Regresar"
+            android:src="@drawable/flecha" />
+
+        <TextView
+            android:id="@+id/tituloCrearPublicacion"
+            android:layout_width="175dp"
+            android:layout_height="72dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginStart="50dp"
+            android:gravity="center"
+            android:text="Crear Publicación"
+            android:textColor="@android:color/black"
+            android:textSize="22sp" />
+    </LinearLayout>
+
+    <!-- Scroll con contenido -->
+    <ScrollView
+        android:id="@+id/scrollCrearPublicacion"
+        android:layout_width="380dp"
+        android:scrollbarSize="0dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/btnSubir"
+        android:layout_below="@id/headerCrearPublicacion"
+        android:padding="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="100dp">
+
+            <!-- Título -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Título del recurso"
+                android:textColor="@android:color/black"
+                android:textSize="20dp"
+                android:layout_marginTop="8dp" />
+
+            <EditText
+                android:id="@+id/inputTitulo"
+                android:layout_width="match_parent"
+                android:layout_height="63dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/edittext_background"
+                android:paddingHorizontal="20dp"/>
+
+            <!-- Descripción -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Descripción del contenido"
+                android:textColor="@android:color/black"
+                android:textSize="20dp"
+                android:layout_marginTop="12dp" />
+
+            <EditText
+                android:id="@+id/inputDescripcion"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:background="@drawable/edittext_background"
+                android:layout_marginTop="10dp"
+                android:padding="16dp"
+                android:gravity="top"
+                android:inputType="textMultiLine" />
+
+            <!-- Archivo adjunto -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Archivo adjunto"
+                android:textColor="@android:color/black"
+                android:textSize="20dp"
+                android:layout_marginTop="12dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="63dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/edittext_background"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="16dp">
+
+                <TextView
+                    android:id="@+id/textAdjunto"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Seleccionar archivo"
+                    android:textColor="@color/gris_claro" />
+
+                <ImageView
+                    android:id="@+id/btnAdjuntarArchivo"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="20dp"
+                    android:src="@drawable/ic_upload" />
+            </LinearLayout>
+
+            <!-- Etiquetas -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Etiquetas"
+                android:textColor="@android:color/black"
+                android:textSize="20dp"
+                android:layout_marginTop="12dp" />
+
+            <Spinner
+                android:id="@+id/spinnerEtiquetas"
+                android:layout_width="match_parent"
+                android:layout_height="63dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/edittext_background" />
+
+            <!-- Tipo de recurso -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tipo de recurso"
+                android:textColor="@android:color/black"
+                android:textSize="20dp"
+                android:layout_marginTop="12dp" />
+
+            <Spinner
+                android:id="@+id/spinnerTipo"
+                android:layout_width="match_parent"
+                android:layout_height="63dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/edittext_background" />
+
+            <!-- Curso o materia relacionada -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Curso o materia relacionada"
+                android:textColor="@android:color/black"
+                android:textSize="20dp"
+                android:layout_marginTop="12dp" />
+
+            <Spinner
+                android:id="@+id/spinnerCurso"
+                android:layout_width="match_parent"
+                android:layout_height="63dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/edittext_background" />
+
+            <!-- Nivel educativo -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nivel educativo"
+                android:textColor="@android:color/black"
+                android:textSize="20dp"
+                android:layout_marginTop="12dp" />
+
+            <!-- Ubicación educativa -->
+            <Spinner
+                android:id="@+id/spinnerNivel"
+                android:layout_width="match_parent"
+                android:layout_height="63dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/edittext_background" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ubicación educativa (opcional)"
+                android:textColor="@android:color/black"
+                android:textSize="20dp"
+                android:layout_marginTop="12dp" />
+
+            <Spinner
+                android:id="@+id/spinnerUbicacion"
+                android:layout_width="match_parent"
+                android:layout_height="63dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/edittext_background" />
+
+            <!-- Idioma del recurso -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Idioma del recurso"
+                android:textColor="@android:color/black"
+                android:textSize="20dp"
+                android:layout_marginTop="12dp" />
+
+            <Spinner
+                android:id="@+id/spinnerIdioma"
+                android:layout_width="match_parent"
+                android:layout_height="63dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/edittext_background" />
+
+            <!-- Foto de Portada -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Foto de Portada"
+                android:textColor="@android:color/black"
+                android:textSize="20dp"
+                android:layout_marginTop="12dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="63dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/edittext_background"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="16dp">
+
+                <TextView
+                    android:id="@+id/textPortada"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Seleccionar imagen"
+                    android:textColor="@color/gris_claro" />
+
+                <ImageView
+                    android:id="@+id/btnSeleccionarImagen"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="20dp"
+                    android:src="@drawable/ic_gallery" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Botón inferior anclado -->
+    <Button
+        android:id="@+id/btnSubir"
+        android:layout_width="258dp"
+        android:layout_height="52dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:layout_centerVertical="true"
+        android:background="@drawable/boton_subir_desactivado"
+        android:text="Subir Publicación"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        android:enabled="false" />
+</RelativeLayout>
