@@ -63,5 +63,7 @@ dependencies {
 
     implementation ("com.loopj.android:android-async-http:1.4.11")
 
+    implementation ("de.hdodenhof:circleimageview:3.1.0")
+
 
 }

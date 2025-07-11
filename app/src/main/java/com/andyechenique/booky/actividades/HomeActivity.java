@@ -5,7 +5,9 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,26 +16,32 @@ import androidx.core.view.GravityCompat;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
 
 import com.andyechenique.booky.R;
 import com.andyechenique.booky.fragmentos.MenuFragment;
+import com.andyechenique.booky.fragmentos.InicioFragment;
+import com.andyechenique.booky.fragmentos.AmigosFragment;
+import com.andyechenique.booky.fragmentos.FavoritosFragment;
+import com.andyechenique.booky.fragmentos.PerfilFragment;
+import com.andyechenique.booky.fragmentos.CrearPublicacionBottomSheet;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class HomeActivity extends AppCompatActivity {
 
     private GoogleSignInClient googleSignInClient;
-
-    // Drawer
     private DrawerLayout drawerLayout;
 
-    // Header
     private ImageButton btnMenu, btnBuscar;
 
-    // Navbar
     private LinearLayout btnInicio, btnAmigos, btnCrear, btnFavoritos, btnPerfil;
+
+    private ImageView iconInicio, iconAmigos, iconFavoritos, iconPerfil;
+    private TextView textInicio, textAmigos, textFavoritos, textPerfil;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,63 +51,117 @@ public class HomeActivity extends AppCompatActivity {
 
         drawerLayout = findViewById(R.id.drawerLayout);
 
-        // Google Sign-In config
+        // Google Sign-In
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
                 .build();
         googleSignInClient = GoogleSignIn.getClient(this, gso);
 
-        // Ajustes visuales
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
 
-        // Inicializar botones del Header
+        // Header
         btnMenu = findViewById(R.id.btnMenu);
         btnBuscar = findViewById(R.id.btnBuscar);
 
-        btnMenu.setOnClickListener(v -> {
-            drawerLayout.openDrawer(GravityCompat.START);
-        });
-
+        btnMenu.setOnClickListener(v -> drawerLayout.openDrawer(GravityCompat.START));
         btnBuscar.setOnClickListener(v -> {
-            // Acción para búsqueda
+            // lógica futura de búsqueda
         });
 
-        // Inicializar botones del Navbar
+        // Navbar
         btnInicio = findViewById(R.id.btnInicio);
         btnAmigos = findViewById(R.id.btnAmigos);
-        btnCrear = findViewById(R.id.btnCrear);
         btnFavoritos = findViewById(R.id.btnFavoritos);
         btnPerfil = findViewById(R.id.btnPerfil);
 
+        iconInicio = findViewById(R.id.iconInicio);
+        iconAmigos = findViewById(R.id.iconAmigos);
+        iconFavoritos = findViewById(R.id.iconFavoritos);
+        iconPerfil = findViewById(R.id.iconPerfil);
+
+        textInicio = findViewById(R.id.textInicio);
+        textAmigos = findViewById(R.id.textAmigos);
+        textFavoritos = findViewById(R.id.textFavoritos);
+        textPerfil = findViewById(R.id.textPerfil);
+
+        // Listeners de navegación
         btnInicio.setOnClickListener(v -> {
-            // Mostrar fragmento de inicio
+            mostrarFragmento(new InicioFragment());
+            activarBoton("inicio");
         });
 
         btnAmigos.setOnClickListener(v -> {
-            // Mostrar sección de amigos
-        });
-
-        btnCrear.setOnClickListener(v -> {
-            //startActivity(new Intent(this, CrearPublicacionActivity.class));
+            mostrarFragmento(new AmigosFragment());
+            activarBoton("amigos");
         });
 
         btnFavoritos.setOnClickListener(v -> {
-            // Mostrar favoritos
+            mostrarFragmento(new FavoritosFragment());
+            activarBoton("favoritos");
         });
 
         btnPerfil.setOnClickListener(v -> {
-            // Mostrar perfil o ir a PerfilActivity
+            mostrarFragmento(new PerfilFragment());
+            activarBoton("perfil");
         });
 
-        // Cargar el fragmento del menú una vez
+        ImageButton btnCrearPublicacion = findViewById(R.id.btnCrearPublicacion);
+        btnCrearPublicacion.setOnClickListener(v -> {
+            BottomSheetDialogFragment bottomSheet = new CrearPublicacionBottomSheet();
+            bottomSheet.show(getSupportFragmentManager(), "CrearPublicacionBottomSheet");
+        });
+
+
+        // Menú lateral
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.menuContainer, new MenuFragment())
                 .commit();
+
+        // Fragmento inicial
+        mostrarFragmento(new InicioFragment());
+        activarBoton("inicio");
+    }
+
+    private void mostrarFragmento(Fragment fragmento) {
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.contenido, fragmento)
+                .commit();
+    }
+
+    private void activarBoton(String seccion) {
+        iconInicio.setImageResource(R.drawable.ic_home_not_active);
+        iconAmigos.setImageResource(R.drawable.ic_amigos_not_active);
+        iconFavoritos.setImageResource(R.drawable.ic_favoritos_not_active);
+        iconPerfil.setImageResource(R.drawable.ic_perfil_not_active);
+
+        textInicio.setTextColor(getColor(R.color.gris_claro));
+        textAmigos.setTextColor(getColor(R.color.gris_claro));
+        textFavoritos.setTextColor(getColor(R.color.gris_claro));
+        textPerfil.setTextColor(getColor(R.color.gris_claro));
+
+        switch (seccion) {
+            case "inicio":
+                iconInicio.setImageResource(R.drawable.ic_home_active);
+                textInicio.setTextColor(getColor(R.color.black));
+                break;
+            case "amigos":
+                iconAmigos.setImageResource(R.drawable.ic_amigos_active);
+                textAmigos.setTextColor(getColor(R.color.black));
+                break;
+            case "favoritos":
+                iconFavoritos.setImageResource(R.drawable.ic_favoritos_active);
+                textFavoritos.setTextColor(getColor(R.color.black));
+                break;
+            case "perfil":
+                iconPerfil.setImageResource(R.drawable.ic_perfil_active);
+                textPerfil.setTextColor(getColor(R.color.black));
+                break;
+        }
     }
 
     public void cerrarSesion() {

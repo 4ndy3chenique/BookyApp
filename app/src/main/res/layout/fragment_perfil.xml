@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/perfilFragmentLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <!-- Fondo (266dp) -->
+    <ImageView
+        android:id="@+id/fondoPerfil"
+        android:layout_width="match_parent"
+        android:layout_height="266dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/fondo_default"
+        android:contentDescription="Fondo de perfil" />
+
+    <!-- Botón editar fondo (parte superior derecha) -->
+    <ImageButton
+        android:id="@+id/btnEditarFondo"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignTop="@id/fondoPerfil"
+        android:layout_alignEnd="@id/fondoPerfil"
+        android:layout_marginEnd="12dp"
+        android:layout_marginTop="210dp"
+        android:background="@drawable/btn_circular_transparente"
+        android:src="@drawable/ic_camera"
+        android:contentDescription="Editar fondo" />
+
+    <!-- Foto de perfil (centrada, superpuesta al fondo) -->
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imgFotoPerfil"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="166dp"
+        android:src="@drawable/avatar_default"
+        android:contentDescription="Foto de perfil" />
+
+    <!-- Botón editar perfil (cámara sobre imagen) -->
+    <ImageButton
+        android:id="@+id/btnEditarPerfil"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignBottom="@id/imgFotoPerfil"
+        android:layout_alignEnd="@id/imgFotoPerfil"
+        android:layout_margin="4dp"
+        android:background="@drawable/btn_circular_transparente"
+        android:src="@drawable/ic_camera"
+        android:contentDescription="Editar perfil" />
+
+    <!-- Botón seguidores -->
+    <LinearLayout
+        android:id="@+id/btnSeguidores"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="24dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginTop="230dp"
+        android:background="@drawable/circulo_blanco">
+
+        <TextView
+            android:id="@+id/textSeguidores"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Seguidores"
+            android:textSize="9dp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black" />
+    </LinearLayout>
+
+    <!-- Sección nombre y verificado -->
+    <LinearLayout
+        android:id="@+id/contenedorNombre"
+        android:layout_width="match_parent"
+        android:layout_height="62dp"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:layout_below="@id/imgFotoPerfil"
+        android:layout_marginTop="8dp">
+
+        <TextView
+            android:id="@+id/textNombreUsuario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Andy Echenique"
+            android:textColor="@android:color/black"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/textVerificado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="(Verificado)"
+            android:textColor="@color/gris_claro"
+            android:textSize="16dp"
+            android:gravity="center" />
+    </LinearLayout>
+
+
+    <!-- Navbar personalizado debajo del nombre -->
+    <LinearLayout
+        android:id="@+id/navbarPerfil"
+        android:layout_width="match_parent"
+        android:layout_height="94dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:background="@android:color/white"
+        android:layout_marginTop="440dp"
+        android:showDividers="middle">
+
+        <!-- Publicaciones -->
+        <FrameLayout
+            android:id="@+id/tabPublicaciones"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/iconPublicaciones"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_publicaciones"
+                    app:tint="@color/black" />
+
+                <View
+                    android:id="@+id/lineaPublicaciones"
+                    android:layout_width="60dp"
+                    android:layout_height="2dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@color/black"
+                    android:visibility="visible" />
+            </LinearLayout>
+        </FrameLayout>
+
+        <!-- Listas -->
+        <FrameLayout
+            android:id="@+id/tabListas"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/iconListas"
+                    android:layout_width="23.33dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_lista"
+                    app:tint="@color/gris_claro" />
+
+                <View
+                    android:id="@+id/lineaListas"
+                    android:layout_width="60dp"
+                    android:layout_height="2dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@color/black"
+                    android:visibility="gone" />
+            </LinearLayout>
+        </FrameLayout>
+
+        <!-- Favoritos -->
+        <FrameLayout
+            android:id="@+id/tabFavoritos"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/iconFavoritos"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/ic_favoritos"
+                    app:tint="@color/gris_claro" />
+
+                <View
+                    android:id="@+id/lineaFavoritos"
+                    android:layout_width="60dp"
+                    android:layout_height="3dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@color/black"
+                    android:visibility="gone" />
+            </LinearLayout>
+        </FrameLayout>
+
+        <!-- Info -->
+        <FrameLayout
+            android:id="@+id/tabInfo"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/iconInfo"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/ic_info"
+                    app:tint="@color/gris_claro" />
+
+                <View
+                    android:id="@+id/lineaInfo"
+                    android:layout_width="60dp"
+                    android:layout_height="3dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@color/black"
+                    android:visibility="gone" />
+            </LinearLayout>
+        </FrameLayout>
+
+    </LinearLayout>
+
+
+
+
+</RelativeLayout>

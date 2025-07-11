@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/amigosFragmentLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/white">
+
+    <!-- Título -->
+    <TextView
+        android:id="@+id/tituloAmigos"
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:text="Amigos"
+        android:gravity="center"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:paddingTop="16dp"
+        android:paddingBottom="8dp" />
+
+    <!-- Selector de pestañas -->
+    <LinearLayout
+        android:id="@+id/tabSelector"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:background="@android:color/white"
+        android:gravity="center">
+
+        <!-- Seguidores -->
+        <LinearLayout
+            android:id="@+id/containerSeguidores"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/tabSeguidores"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Seguidores"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black" />
+
+            <View
+                android:id="@+id/lineaSeguidores"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/black"
+                android:visibility="visible"/>
+        </LinearLayout>
+
+        <!-- Seguidos -->
+        <LinearLayout
+            android:id="@+id/containerSeguidos"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/tabSeguidos"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Seguidos"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textColor="@color/gris_claro" />
+
+            <View
+                android:id="@+id/lineaSeguidos"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/black"
+                android:visibility="invisible"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- LÍNEA SIMULADA DE SOMBRA -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#E0E0E0" /> <!-- gris clarito para simular la sombra -->
+
+    <!-- Contenedor de contenido -->
+    <FrameLayout
+        android:id="@+id/contenedorAmigos"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+</LinearLayout>
