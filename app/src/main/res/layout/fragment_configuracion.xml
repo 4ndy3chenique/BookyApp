@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/configuracionLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <!-- Header con flecha y título -->
+    <LinearLayout
+        android:id="@+id/headerConfiguracion"
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:orientation="horizontal"
+        android:background="@android:color/white"
+        android:elevation="4dp"
+        android:paddingHorizontal="16dp"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:id="@+id/btnAtras"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/flecha"
+            android:contentDescription="Atrás"  />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Configuración"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:layout_marginEnd="40dp" />
+    </LinearLayout>
+
+    <!-- Contenido scroll -->
+    <ScrollView
+        android:layout_below="@id/headerConfiguracion"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <!-- Notificaciones -->
+            <TextView
+                android:layout_width="370dp"
+                android:layout_height="100dp"
+                android:text="Notificaciones"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                android:gravity="center_vertical"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/linea" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="79dp"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="253dp"
+                    android:layout_height="55dp"
+                    android:text="Nuevo seguidor"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/black"
+                    android:textSize="16dp" />
+
+                <Switch
+                    android:id="@+id/switchSeguidores"
+                    android:layout_width="136dp"
+                    android:layout_height="55dp"
+                    android:gravity="center_vertical"
+                    android:paddingEnd="30dp"/>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/linea" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="79dp"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="253dp"
+                    android:layout_height="55dp"
+                    android:text="Nuevo comentario"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/black"
+                    android:textSize="16dp" />
+
+                <Switch
+                    android:id="@+id/switchComentarios"
+                    android:layout_width="136dp"
+                    android:layout_height="55dp"
+                    android:gravity="center_vertical"
+                    android:paddingEnd="30dp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/linea" />
+
+            <TextView
+                android:id="@+id/configurarNotificaciones"
+                android:text="Configurar notificaciones"
+                android:layout_width="389dp"
+                android:layout_height="79dp"
+                android:gravity="center_vertical"
+                android:textColor="@color/black"
+                android:textSize="16dp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/linea" />
+
+            <!-- Cuenta -->
+            <TextView
+                android:text="Cuenta"
+                android:layout_width="370dp"
+                android:layout_height="100dp"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                android:gravity="center_vertical"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/linea" />
+
+            <TextView
+                android:id="@+id/opcionCuenta"
+                android:layout_width="389dp"
+                android:layout_height="79dp"
+                android:gravity="center_vertical"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:text="Mi cuenta" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/linea" />
+
+            <TextView
+                android:id="@+id/opcionNivel"
+                android:layout_width="389dp"
+                android:layout_height="79dp"
+                android:gravity="center_vertical"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:text="Nivel de la cuenta" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/linea" />
+
+            <TextView
+                android:id="@+id/opcionModoOscuro"
+                android:layout_width="389dp"
+                android:layout_height="79dp"
+                android:gravity="center_vertical"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:text="Modo oscuro" />
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/linea" />
+
+            <!-- Ayuda -->
+            <TextView
+                android:text="Ayuda"
+                android:layout_width="370dp"
+                android:layout_height="100dp"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                android:gravity="center_vertical"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/linea" />
+
+            <TextView
+                android:id="@+id/opcionReportar"
+                android:layout_width="389dp"
+                android:layout_height="79dp"
+                android:gravity="center_vertical"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:text="Reportar un problema" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/linea" />
+
+            <TextView
+                android:id="@+id/opcionCentroAyuda"
+                android:layout_width="389dp"
+                android:layout_height="79dp"
+                android:gravity="center_vertical"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:text="Centro de ayuda" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/linea" />
+
+            <!-- General -->
+            <TextView
+                android:layout_width="370dp"
+                android:layout_height="100dp"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                android:gravity="center_vertical"
+                android:text="General" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/linea" />
+
+            <TextView
+                android:id="@+id/opcionCondiciones"
+                android:layout_width="389dp"
+                android:layout_height="79dp"
+                android:gravity="center_vertical"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:text="Condiciones de uso" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/linea" />
+
+            <TextView
+                android:id="@+id/opcionPrivacidad"
+                android:layout_width="389dp"
+                android:layout_height="79dp"
+                android:gravity="center_vertical"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:text="Política de privacidad" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/linea" />
+
+            <!-- Versión -->
+            <TextView
+                android:layout_width="389dp"
+                android:layout_height="79dp"
+                android:gravity="center_vertical"
+                android:textSize="16dp"
+                android:text="Versión de la aplicación 1.0.0"
+                android:textColor="@color/gris_claro"
+                android:layout_marginTop="30dp" />
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

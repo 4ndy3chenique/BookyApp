@@ -1,6 +1,5 @@
-package com.andyechenique.booky.fragmentos;
+package com.andyechenique.booky.dialog;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.andyechenique.booky.R;
+import com.andyechenique.booky.fragmentos.CrearPublicacionFragment;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
 public class CrearPublicacionBottomSheet extends BottomSheetDialogFragment {

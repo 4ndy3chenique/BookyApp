@@ -1,4 +1,4 @@
-package com.andyechenique.booky.fragmentos;
+package com.andyechenique.booky.dialog;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -14,7 +14,6 @@ import androidx.annotation.Nullable;
 import com.andyechenique.booky.R;
 import com.andyechenique.booky.actividades.HomeActivity;
 import com.andyechenique.booky.actividades.InicioSesionUserActivity;
-import com.andyechenique.booky.fragmentos.LoadingDialog;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;

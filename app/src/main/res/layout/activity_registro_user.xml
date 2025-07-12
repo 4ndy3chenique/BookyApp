@@ -63,7 +63,7 @@
             android:layout_gravity="center"
             android:layout_marginBottom="12dp"
             android:background="@drawable/edittext_background"
-            android:hint="Nombre Completo"
+            android:hint="Nombre y Apellido"
             android:inputType="textPersonName"
             android:maxLength="60"
             tools:ignore="TouchTargetSizeCheck" />

@@ -14,7 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.andyechenique.booky.R;
 import com.andyechenique.booky.clases.Hash;
-import com.andyechenique.booky.fragmentos.LoadingDialog;
+import com.andyechenique.booky.dialog.LoadingDialog;
 import com.google.android.material.button.MaterialButton;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;

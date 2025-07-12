@@ -38,6 +38,7 @@
     <color name="error_red">#D32F2F</color>
 
     <color name="gris_claro">#848484</color>
+    <color name="linea">#E0E0E0</color>
 
 
 </resources>

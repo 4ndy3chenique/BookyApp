@@ -2,7 +2,6 @@ package com.andyechenique.booky.fragmentos;
 
 import static android.content.Context.MODE_PRIVATE;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -17,6 +16,7 @@ import androidx.fragment.app.Fragment;
 import com.andyechenique.booky.R;
 import com.andyechenique.booky.actividades.MainActivity;
 import com.andyechenique.booky.actividades.RegistroUserActivity;
+import com.andyechenique.booky.dialog.InicioSesionBottomSheet;
 
 public class OnboardingFragmentD extends Fragment {
 

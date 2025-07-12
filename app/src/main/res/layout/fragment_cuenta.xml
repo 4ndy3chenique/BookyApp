@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layoutCuenta"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <!-- Header con flecha y título -->
+    <LinearLayout
+        android:id="@+id/headerCuenta"
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:orientation="horizontal"
+        android:background="@android:color/white"
+        android:elevation="4dp"
+        android:paddingHorizontal="16dp"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:id="@+id/btnAtrasCuenta"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/flecha"
+            android:contentDescription="Atrás" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mi cuenta"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:layout_marginEnd="40dp"/>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_below="@id/headerCuenta"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Gestionar cuenta -->
+            <TextView
+                android:id="@+id/opcionGestionarCuenta"
+                android:layout_width="match_parent"
+                android:layout_height="79dp"
+                android:gravity="center_vertical"
+                android:text="Gestionar cuenta"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:paddingHorizontal="16dp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/linea" />
+
+            <!-- Cuenta privada -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="79dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="16dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Cuenta privada"
+                    android:textColor="@color/black"
+                    android:textSize="16dp" />
+
+                <Switch
+                    android:id="@+id/switchPrivada"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/linea" />
+
+            <!-- Eliminar cuenta -->
+            <TextView
+                android:id="@+id/opcionEliminarCuenta"
+                android:layout_width="match_parent"
+                android:layout_height="79dp"
+                android:gravity="center_vertical"
+                android:text="Eliminar cuenta"
+                android:textColor="@android:color/holo_red_dark"
+                android:textSize="16dp"
+                android:paddingHorizontal="16dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/linea" />
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

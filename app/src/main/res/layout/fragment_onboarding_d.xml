@@ -16,7 +16,6 @@
         android:clickable="true"
         android:focusable="true"
         android:padding="16dp"
-        android:text="@string/txtOmitir"
         android:textColor="@color/textPrimary"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"

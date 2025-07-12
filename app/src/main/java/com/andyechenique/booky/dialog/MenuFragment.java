@@ -1,6 +1,5 @@
-package com.andyechenique.booky.fragmentos;
+package com.andyechenique.booky.dialog;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,11 +9,15 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
 import com.andyechenique.booky.R;
 import com.andyechenique.booky.actividades.HomeActivity;
-
+import com.andyechenique.booky.fragmentos.ConfiguracionFragment;
+import com.andyechenique.booky.fragmentos.InicioFragment;
+import com.andyechenique.booky.fragmentos.ResenasFragment;
+import com.andyechenique.booky.fragmentos.VerificacionFragment;
 
 public class MenuFragment extends Fragment {
 
@@ -43,32 +46,64 @@ public class MenuFragment extends Fragment {
         txtNombre = view.findViewById(R.id.txtNombre);
         txtCorreo = view.findViewById(R.id.txtCorreo);
 
-        // Datos simulados (puedes obtenerlos desde Firebase o SharedPreferences)
+        // Datos simulados (puedes reemplazar por valores reales)
         txtNombre.setText("Andy Echenique");
         txtCorreo.setText("andy974275@gmail.com");
 
         // Acciones
         opcionInicio.setOnClickListener(v -> {
-            // Acción para volver al inicio
+            cerrarDrawer();
+            mostrarFragmento(new InicioFragment());
         });
 
         opcionResenas.setOnClickListener(v -> {
-            // Acción para ir a reseñas
+            cerrarDrawer();
+            mostrarFragmento(new ResenasFragment());
         });
 
         opcionVerificacion.setOnClickListener(v -> {
-            // Acción para solicitar verificación
+            cerrarDrawer();
+            mostrarFragmento(new VerificacionFragment());
         });
 
         opcionConfiguracion.setOnClickListener(v -> {
+            cerrarDrawer();
+            mostrarFragmento(new ConfiguracionFragment());
         });
 
         opcionCerrarSesion.setOnClickListener(v -> {
             if (getActivity() instanceof HomeActivity) {
-                ((HomeActivity) getActivity()).cerrarSesion();
+                LogoutDialog logoutDialog = new LogoutDialog(requireContext());
+                logoutDialog.show();
+
+
+                v.postDelayed(() -> {
+                    ((HomeActivity) getActivity()).cerrarSesion();
+                    logoutDialog.dismiss();
+                }, 1500);
             }
         });
 
+
+
         return view;
+    }
+
+    private void cerrarDrawer() {
+        if (getActivity() instanceof HomeActivity) {
+            DrawerLayout drawerLayout = ((HomeActivity) getActivity()).findViewById(R.id.drawerLayout);
+            if (drawerLayout != null) {
+                drawerLayout.closeDrawers();
+            }
+        }
+    }
+
+    private void mostrarFragmento(Fragment fragmento) {
+        if (getActivity() != null) {
+            getActivity().getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.contenido, fragmento)
+                    .addToBackStack(null)
+                    .commit();
+        }
     }
 }

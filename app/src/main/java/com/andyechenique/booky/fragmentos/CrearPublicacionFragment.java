@@ -16,6 +16,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.andyechenique.booky.R;
+import com.andyechenique.booky.dialog.SeleccionarImagenBottomSheet;
+import com.andyechenique.booky.dialog.SubirArchivoBottomSheet;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
 public class CrearPublicacionFragment extends Fragment {
@@ -92,16 +94,6 @@ public class CrearPublicacionFragment extends Fragment {
         });
     }
 
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-
-        // Restaurar header y navbar al salir
-        View header = getActivity().findViewById(R.id.header);
-        View navbar = getActivity().findViewById(R.id.navbar);
-        if (header != null) header.setVisibility(View.VISIBLE);
-        if (navbar != null) navbar.setVisibility(View.VISIBLE);
-    }
 
     private void validarCampos() {
         boolean valido = !inputTitulo.getText().toString().trim().isEmpty()

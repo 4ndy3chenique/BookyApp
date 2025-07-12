@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layoutModoOscuro"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <!-- Header con flecha y título -->
+    <LinearLayout
+        android:id="@+id/headerModoOscuro"
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:orientation="horizontal"
+        android:background="@android:color/white"
+        android:elevation="4dp"
+        android:paddingHorizontal="16dp"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:id="@+id/btnAtrasModoOscuro"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/flecha"
+            android:contentDescription="Atrás" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Modo oscuro"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:gravity="center"
+            android:layout_marginEnd="40dp"/>
+    </LinearLayout>
+
+    <!-- Opciones de tema -->
+    <LinearLayout
+        android:id="@+id/contenedorOpcionesModo"
+        android:layout_below="@id/headerModoOscuro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Opción: Activado -->
+        <LinearLayout
+            android:id="@+id/opcionTemaOscuro"
+            android:layout_width="match_parent"
+            android:layout_height="79dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="16dp">
+
+            <TextView
+                android:layout_width="253dp"
+                android:layout_height="55dp"
+                android:gravity="center_vertical"
+                android:text="Activado"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="136dp"
+                android:layout_height="55dp"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/checkOscuro"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_radio_unchecked" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/linea" />
+
+        <!-- Opción: Desactivado -->
+        <LinearLayout
+            android:id="@+id/opcionTemaClaro"
+            android:layout_width="match_parent"
+            android:layout_height="79dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="16dp">
+
+            <TextView
+                android:layout_width="253dp"
+                android:layout_height="55dp"
+                android:gravity="center_vertical"
+                android:text="Desactivado"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+            <LinearLayout
+                android:layout_width="136dp"
+                android:layout_height="55dp"
+                android:gravity="center">
+                <ImageView
+                    android:id="@+id/checkClaro"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_radio_checked" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/linea" />
+
+        <!-- Opción: Sistema -->
+        <LinearLayout
+            android:id="@+id/opcionTemaSistema"
+            android:layout_width="match_parent"
+            android:layout_height="79dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="16dp">
+
+            <TextView
+                android:layout_width="253dp"
+                android:layout_height="55dp"
+                android:gravity="center_vertical"
+                android:text="Sistema"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+            <LinearLayout
+                android:layout_width="136dp"
+                android:layout_height="55dp"
+                android:gravity="center">
+                <ImageView
+                    android:id="@+id/checkSistema"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_radio_unchecked" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/linea" />
+
+    </LinearLayout>
+</RelativeLayout>
