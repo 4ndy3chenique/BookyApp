@@ -16,8 +16,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.andyechenique.booky.R;
-import com.andyechenique.booky.dialog.SeleccionarImagenBottomSheet;
-import com.andyechenique.booky.dialog.SubirArchivoBottomSheet;
+import com.andyechenique.booky.Modals.SeleccionarImagenBottomSheet;
+import com.andyechenique.booky.Modals.SubirArchivoBottomSheet;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
 public class CrearPublicacionFragment extends Fragment {

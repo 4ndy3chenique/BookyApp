@@ -1,4 +1,4 @@
-package com.andyechenique.booky.dialog;
+package com.andyechenique.booky.Modals;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

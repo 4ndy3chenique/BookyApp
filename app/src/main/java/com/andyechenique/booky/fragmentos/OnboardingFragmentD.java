@@ -16,7 +16,7 @@ import androidx.fragment.app.Fragment;
 import com.andyechenique.booky.R;
 import com.andyechenique.booky.actividades.MainActivity;
 import com.andyechenique.booky.actividades.RegistroUserActivity;
-import com.andyechenique.booky.dialog.InicioSesionBottomSheet;
+import com.andyechenique.booky.Modals.InicioSesionBottomSheet;
 
 public class OnboardingFragmentD extends Fragment {
 

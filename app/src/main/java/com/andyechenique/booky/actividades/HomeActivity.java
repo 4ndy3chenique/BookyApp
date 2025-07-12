@@ -18,12 +18,12 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
 import com.andyechenique.booky.R;
-import com.andyechenique.booky.dialog.MenuFragment;
+import com.andyechenique.booky.Modals.MenuFragment;
 import com.andyechenique.booky.fragmentos.InicioFragment;
 import com.andyechenique.booky.fragmentos.AmigosFragment;
 import com.andyechenique.booky.fragmentos.FavoritosFragment;
 import com.andyechenique.booky.fragmentos.PerfilFragment;
-import com.andyechenique.booky.dialog.CrearPublicacionBottomSheet;
+import com.andyechenique.booky.Modals.CrearPublicacionBottomSheet;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;

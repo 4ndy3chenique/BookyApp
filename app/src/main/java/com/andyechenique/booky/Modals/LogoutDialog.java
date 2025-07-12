@@ -1,4 +1,4 @@
-package com.andyechenique.booky.dialog;
+package com.andyechenique.booky.Modals;
 
 import android.app.Dialog;
 import android.content.Context;

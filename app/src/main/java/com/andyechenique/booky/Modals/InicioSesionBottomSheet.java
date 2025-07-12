@@ -1,4 +1,4 @@
-package com.andyechenique.booky.dialog;
+package com.andyechenique.booky.Modals;
 
 import android.content.Intent;
 import android.content.SharedPreferences;

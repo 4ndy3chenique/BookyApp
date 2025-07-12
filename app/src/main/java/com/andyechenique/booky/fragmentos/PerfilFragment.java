@@ -15,8 +15,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.andyechenique.booky.R;
-import com.andyechenique.booky.dialog.EditarFondoBottomSheet;
-import com.andyechenique.booky.dialog.EditarFotoPerfilBottomSheet;
+import com.andyechenique.booky.Modals.EditarFondoBottomSheet;
+import com.andyechenique.booky.Modals.EditarFotoPerfilBottomSheet;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
 public class PerfilFragment extends Fragment {
