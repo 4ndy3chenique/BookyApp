@@ -214,6 +214,7 @@
             android:layout_height="60dp"
             android:layout_marginTop="16dp"
             android:text="Registrarse"
+            android:textAllCaps="false"
             android:layout_gravity="center"
             android:textStyle="bold"
             android:textColor="@color/txtRegistro"
@@ -221,6 +222,7 @@
             android:enabled="false"
             android:alpha="0.5"
             app:cornerRadius="50dp" />
+
     </LinearLayout>
 
 
