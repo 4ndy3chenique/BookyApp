@@ -83,6 +83,7 @@ public class InicioSesionUserActivity extends AppCompatActivity {
                             .putBoolean("sesion_activa", true)
                             .putString("correo", user.optString("Correo"))
                             .putString("rol", user.optString("Rol"))
+                            .putInt("id_usuario", user.optInt("IdUsuario", -1))
                             .apply();
 
                     Toast.makeText(InicioSesionUserActivity.this, "Inicio de sesión exitoso", Toast.LENGTH_SHORT).show();

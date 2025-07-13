@@ -111,8 +111,11 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Seleccionar archivo"
-                    android:textColor="@color/gris_claro" />
+                    android:text="Seleccionar Archivo"
+                    android:textColor="@android:color/black"
+                    android:maxLines="1"
+                    android:ellipsize="end" />
+
 
                 <ImageView
                     android:id="@+id/btnAdjuntarArchivo"
@@ -240,8 +243,8 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Seleccionar imagen"
-                    android:textColor="@color/gris_claro" />
+                    android:text="Seleccionar Imagen"
+                    android:textColor="@android:color/black" />
 
                 <ImageView
                     android:id="@+id/btnSeleccionarImagen"
@@ -262,10 +265,10 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="20dp"
-        android:layout_centerVertical="true"
-        android:background="@drawable/boton_subir_desactivado"
+        android:background="@drawable/boton_subir_estados"
         android:text="Subir Publicación"
         android:textColor="@android:color/white"
         android:textStyle="bold"
         android:enabled="false" />
+
 </RelativeLayout>

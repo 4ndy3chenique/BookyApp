@@ -16,25 +16,60 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.JsonHttpResponseHandler;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import cz.msebera.android.httpclient.Header;
 
 public class MapsFragment extends Fragment {
 
-    private OnMapReadyCallback callback = new OnMapReadyCallback() {
+    // Cambia esto por la URL de tu endpoint real
+    private static final String URL_UNIVERSIDADES = "https://booky-web.scm.azurewebsites.net/mostrarUniversidades.php";
 
-        /**
-         * Manipulates the map once available.
-         * This callback is triggered when the map is ready to be used.
-         * This is where we can add markers or lines, add listeners or move the camera.
-         * In this case, we just add a marker near Sydney, Australia.
-         * If Google Play services is not installed on the device, the user will be prompted to
-         * install it inside the SupportMapFragment. This method will only be triggered once the
-         * user has installed Google Play services and returned to the app.
-         */
+    private OnMapReadyCallback callback = new OnMapReadyCallback() {
         @Override
         public void onMapReady(GoogleMap googleMap) {
-            LatLng sydney = new LatLng(-34, 151);
-            googleMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-            googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+            googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+
+            AsyncHttpClient client = new AsyncHttpClient();
+            client.get(URL_UNIVERSIDADES, new JsonHttpResponseHandler() {
+                @Override
+                public void onSuccess(int statusCode, Header[] headers, JSONArray response) {
+                    try {
+                        LatLng posicionInicial = null;
+
+                        for (int i = 0; i < response.length(); i++) {
+                            JSONObject universidad = response.getJSONObject(i);
+                            String nombre = universidad.getString("nombre_universidad");
+                            double lat = universidad.getDouble("latitud");
+                            double lon = universidad.getDouble("longitud");
+
+                            LatLng posicion = new LatLng(lat, lon);
+                            googleMap.addMarker(new MarkerOptions().position(posicion).title(nombre));
+
+                            // Guardar primera ubicación para centrar la cámara
+                            if (i == 0) {
+                                posicionInicial = posicion;
+                            }
+                        }
+
+                        if (posicionInicial != null) {
+                            googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(posicionInicial, 12));
+                        }
+
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+
+                @Override
+                public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONArray errorResponse) {
+                    // Manejo de error en caso falle la consulta
+                }
+            });
         }
     };
 
