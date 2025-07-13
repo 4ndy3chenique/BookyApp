@@ -118,7 +118,7 @@ public class PublicacionAdapter extends RecyclerView.Adapter<PublicacionAdapter.
             txtPuntaje = itemView.findViewById(R.id.txtPuntaje);
             txtCalificacion = itemView.findViewById(R.id.txtCalificacion);
             ratingBar = itemView.findViewById(R.id.ratingBar);
-            layoutChips = itemView.findViewById(R.id.layoutChips);
+
         }
     }
 

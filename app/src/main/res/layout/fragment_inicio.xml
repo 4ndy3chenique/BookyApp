@@ -1,6 +1,1238 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="12dp"
+        android:paddingBottom="93dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="20dp">
+
+        <!-- Imagen de portada -->
+        <ImageView
+            android:id="@+id/imgPortada"
+            android:layout_width="165dp"
+            android:layout_height="270dp"
+            android:scaleType="centerCrop"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/publicacion1"
+            android:contentDescription="Portada" />
+
+        <!-- Contenido derecho -->
+        <LinearLayout
+            android:layout_width="200dp"
+            android:layout_height="270dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="@drawable/bg_card"
+            android:elevation="3dp"
+            android:paddingStart="12dp">
+
+            <!-- Título -->
+            <TextView
+                android:id="@+id/txtTitulo"
+                android:layout_width="187dp"
+                android:layout_height="46dp"
+                android:text="Matematica y Fisica"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:maxLines="2"
+                android:ellipsize="end" />
+
+            <!-- Etiquetas y curso (chips) -->
+            <TextView
+                android:id="@+id/txtEtiquetas"
+                android:layout_width="200dp"
+                android:layout_height="51dp"
+                android:text="Algebra Lineal, Calculo Diferencial"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textSize="10dp"
+                android:maxLines="2"
+                android:ellipsize="end" />
+
+            <!-- Universidad y Nivel -->
+            <LinearLayout
+                android:layout_width="200dp"
+                android:layout_height="71dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="100dp"
+                    android:layout_height="71dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imgUniversidad"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:background="@drawable/universidad"
+                        android:layout_gravity="center"
+                        android:contentDescription="UniversidadIMG" />
+
+                    <TextView
+                        android:id="@+id/txtUniversidad"
+                        android:layout_width="100dp"
+                        android:layout_height="31dp"
+                        android:gravity="center_horizontal"
+                        android:layout_gravity="center"
+                        android:text="Universidad X"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="100dp"
+                    android:layout_height="71dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imgNivel"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:background="@drawable/ic_nivel"
+                        android:layout_gravity="center"
+                        android:contentDescription="UniversidadIMG" />
+
+                    <TextView
+                        android:id="@+id/txtNivel"
+                        android:layout_width="100dp"
+                        android:layout_height="31dp"
+                        android:layout_gravity="center"
+                        android:gravity="center_horizontal"
+                        android:text="Nivel X"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Usuario y Fecha -->
+            <LinearLayout
+                android:layout_width="200dp"
+                android:layout_height="48dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="100dp"
+                    android:layout_height="48dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/icon"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:background="@drawable/avatar_default"
+                        android:layout_gravity="center"
+                        android:contentDescription="Perfil" />
+
+                    <TextView
+                        android:id="@+id/txtNombrePerfil"
+                        android:layout_width="100dp"
+                        android:layout_height="18dp"
+                        android:gravity="center_horizontal"
+                        android:layout_gravity="center"
+                        android:text="NombrePerfil"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="100dp"
+                    android:layout_height="48dp"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imgCalendario"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:background="@drawable/ic_calendario"
+                        android:layout_gravity="center"
+                        android:contentDescription="CalendarioIMG" />
+
+                    <TextView
+                        android:id="@+id/txtCalendario"
+                        android:layout_width="100dp"
+                        android:layout_height="18dp"
+                        android:layout_gravity="center"
+                        android:gravity="center_horizontal"
+                        android:text="Calendario x"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Calificación -->
+            <LinearLayout
+                android:layout_width="200dp"
+                android:layout_height="46dp"
+                android:orientation="horizontal"
+                android:gravity="center_horizontal">
+
+                <LinearLayout
+                    android:layout_width="85dp"
+                    android:layout_height="46dp"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/txtPuntaje"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="4.0 x"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"/>
+                    <TextView
+                        android:id="@+id/txtCalificacion"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Calificación"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"/>
+                </LinearLayout>
+
+                <RatingBar
+                    android:id="@+id/ratingBar"
+                    android:layout_width="114dp"
+                    android:layout_height="44dp"
+                    android:numStars="5"
+                    android:stepSize="0.5"
+                    android:isIndicator="true"
+                    android:scaleX="0.4"
+                    android:scaleY="0.4" />
+            </LinearLayout>
+        </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="20dp">
+
+            <!-- Imagen de portada -->
+            <ImageView
+                android:id="@+id/imgPortada1"
+                android:layout_width="165dp"
+                android:layout_height="270dp"
+                android:scaleType="centerCrop"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/publicacion1"
+                android:contentDescription="Portada" />
+
+            <!-- Contenido derecho -->
+            <LinearLayout
+                android:layout_width="200dp"
+                android:layout_height="270dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="@drawable/bg_card"
+                android:elevation="3dp"
+                android:paddingStart="12dp">
+
+                <!-- Título -->
+                <TextView
+                    android:id="@+id/txtTitulo1"
+                    android:layout_width="187dp"
+                    android:layout_height="46dp"
+                    android:text="Matematica y Fisica"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:maxLines="2"
+                    android:ellipsize="end" />
+
+                <!-- Etiquetas y curso (chips) -->
+                <TextView
+                    android:id="@+id/txtEtiquetas1"
+                    android:layout_width="200dp"
+                    android:layout_height="51dp"
+                    android:text="Algebra Lineal, Calculo Diferencial"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:textSize="10dp"
+                    android:maxLines="2"
+                    android:ellipsize="end" />
+
+                <!-- Universidad y Nivel -->
+                <LinearLayout
+                    android:layout_width="200dp"
+                    android:layout_height="71dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="100dp"
+                        android:layout_height="71dp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imgUniversidad1"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:background="@drawable/universidad"
+                            android:layout_gravity="center"
+                            android:contentDescription="UniversidadIMG" />
+
+                        <TextView
+                            android:id="@+id/txtUniversidad1"
+                            android:layout_width="100dp"
+                            android:layout_height="31dp"
+                            android:gravity="center_horizontal"
+                            android:layout_gravity="center"
+                            android:text="Universidad X"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="100dp"
+                        android:layout_height="71dp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imgNivel1"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:background="@drawable/ic_nivel"
+                            android:layout_gravity="center"
+                            android:contentDescription="UniversidadIMG" />
+
+                        <TextView
+                            android:id="@+id/txtNivel1"
+                            android:layout_width="100dp"
+                            android:layout_height="31dp"
+                            android:layout_gravity="center"
+                            android:gravity="center_horizontal"
+                            android:text="Nivel X"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Usuario y Fecha -->
+                <LinearLayout
+                    android:layout_width="200dp"
+                    android:layout_height="48dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="100dp"
+                        android:layout_height="48dp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/icon1"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:background="@drawable/avatar_default"
+                            android:layout_gravity="center"
+                            android:contentDescription="Perfil" />
+
+                        <TextView
+                            android:id="@+id/txtNombrePerfil1"
+                            android:layout_width="100dp"
+                            android:layout_height="18dp"
+                            android:gravity="center_horizontal"
+                            android:layout_gravity="center"
+                            android:text="NombrePerfil"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="100dp"
+                        android:layout_height="48dp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imgCalendario1"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:background="@drawable/ic_calendario"
+                            android:layout_gravity="center"
+                            android:contentDescription="CalendarioIMG" />
+
+                        <TextView
+                            android:id="@+id/txtCalendario1"
+                            android:layout_width="100dp"
+                            android:layout_height="18dp"
+                            android:layout_gravity="center"
+                            android:gravity="center_horizontal"
+                            android:text="Calendario x"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Calificación -->
+                <LinearLayout
+                    android:layout_width="200dp"
+                    android:layout_height="46dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_horizontal">
+
+                    <LinearLayout
+                        android:layout_width="85dp"
+                        android:layout_height="46dp"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/txtPuntaje1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="4.0 x"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"/>
+                        <TextView
+                            android:id="@+id/txtCalificacion1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Calificación"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"/>
+                    </LinearLayout>
+
+                    <RatingBar
+                        android:id="@+id/ratingBar1"
+                        android:layout_width="114dp"
+                        android:layout_height="44dp"
+                        android:numStars="5"
+                        android:stepSize="0.5"
+                        android:isIndicator="true"
+                        android:scaleX="0.4"
+                        android:scaleY="0.4" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="20dp">
+
+            <!-- Imagen de portada -->
+            <ImageView
+                android:id="@+id/imgPortada2"
+                android:layout_width="165dp"
+                android:layout_height="270dp"
+                android:scaleType="centerCrop"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/publicacion1"
+                android:contentDescription="Portada" />
+
+            <!-- Contenido derecho -->
+            <LinearLayout
+                android:layout_width="200dp"
+                android:layout_height="270dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="@drawable/bg_card"
+                android:elevation="3dp"
+                android:paddingStart="12dp">
+
+                <!-- Título -->
+                <TextView
+                    android:id="@+id/txtTitulo2"
+                    android:layout_width="187dp"
+                    android:layout_height="46dp"
+                    android:text="Matematica y Fisica"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:maxLines="2"
+                    android:ellipsize="end" />
+
+                <!-- Etiquetas y curso (chips) -->
+                <TextView
+                    android:id="@+id/txtEtiquetas2"
+                    android:layout_width="200dp"
+                    android:layout_height="51dp"
+                    android:text="Algebra Lineal, Calculo Diferencial"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:textSize="10dp"
+                    android:maxLines="2"
+                    android:ellipsize="end" />
+
+                <!-- Universidad y Nivel -->
+                <LinearLayout
+                    android:layout_width="200dp"
+                    android:layout_height="71dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="100dp"
+                        android:layout_height="71dp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imgUniversidad2"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:background="@drawable/universidad"
+                            android:layout_gravity="center"
+                            android:contentDescription="UniversidadIMG" />
+
+                        <TextView
+                            android:id="@+id/txtUniversidad2"
+                            android:layout_width="100dp"
+                            android:layout_height="31dp"
+                            android:gravity="center_horizontal"
+                            android:layout_gravity="center"
+                            android:text="Universidad X"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="100dp"
+                        android:layout_height="71dp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imgNivel2"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:background="@drawable/ic_nivel"
+                            android:layout_gravity="center"
+                            android:contentDescription="UniversidadIMG" />
+
+                        <TextView
+                            android:id="@+id/txtNivel2"
+                            android:layout_width="100dp"
+                            android:layout_height="31dp"
+                            android:layout_gravity="center"
+                            android:gravity="center_horizontal"
+                            android:text="Nivel X"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Usuario y Fecha -->
+                <LinearLayout
+                    android:layout_width="200dp"
+                    android:layout_height="48dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="100dp"
+                        android:layout_height="48dp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/icon2"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:background="@drawable/avatar_default"
+                            android:layout_gravity="center"
+                            android:contentDescription="Perfil" />
+
+                        <TextView
+                            android:id="@+id/txtNombrePerfil2"
+                            android:layout_width="100dp"
+                            android:layout_height="18dp"
+                            android:gravity="center_horizontal"
+                            android:layout_gravity="center"
+                            android:text="NombrePerfil"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="100dp"
+                        android:layout_height="48dp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imgCalendario2"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:background="@drawable/ic_calendario"
+                            android:layout_gravity="center"
+                            android:contentDescription="CalendarioIMG" />
+
+                        <TextView
+                            android:id="@+id/txtCalendario2"
+                            android:layout_width="100dp"
+                            android:layout_height="18dp"
+                            android:layout_gravity="center"
+                            android:gravity="center_horizontal"
+                            android:text="Calendario x"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Calificación -->
+                <LinearLayout
+                    android:layout_width="200dp"
+                    android:layout_height="46dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_horizontal">
+
+                    <LinearLayout
+                        android:layout_width="85dp"
+                        android:layout_height="46dp"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/txtPuntaje2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="4.0 x"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"/>
+                        <TextView
+                            android:id="@+id/txtCalificacion2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Calificación"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"/>
+                    </LinearLayout>
+
+                    <RatingBar
+                        android:id="@+id/ratingBar2"
+                        android:layout_width="114dp"
+                        android:layout_height="44dp"
+                        android:numStars="5"
+                        android:stepSize="0.5"
+                        android:isIndicator="true"
+                        android:scaleX="0.4"
+                        android:scaleY="0.4" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="20dp">
+
+            <!-- Imagen de portada -->
+            <ImageView
+                android:id="@+id/imgPortada3"
+                android:layout_width="165dp"
+                android:layout_height="270dp"
+                android:scaleType="centerCrop"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/publicacion1"
+                android:contentDescription="Portada" />
+
+            <!-- Contenido derecho -->
+            <LinearLayout
+                android:layout_width="200dp"
+                android:layout_height="270dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="@drawable/bg_card"
+                android:elevation="3dp"
+                android:paddingStart="12dp">
+
+                <!-- Título -->
+                <TextView
+                    android:id="@+id/txtTitulo3"
+                    android:layout_width="187dp"
+                    android:layout_height="46dp"
+                    android:text="Matematica y Fisica"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:maxLines="2"
+                    android:ellipsize="end" />
+
+                <!-- Etiquetas y curso (chips) -->
+                <TextView
+                    android:id="@+id/txtEtiquetas3"
+                    android:layout_width="200dp"
+                    android:layout_height="51dp"
+                    android:text="Algebra Lineal, Calculo Diferencial"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:textSize="10dp"
+                    android:maxLines="2"
+                    android:ellipsize="end" />
+
+                <!-- Universidad y Nivel -->
+                <LinearLayout
+                    android:layout_width="200dp"
+                    android:layout_height="71dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="100dp"
+                        android:layout_height="71dp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imgUniversidad3"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:background="@drawable/universidad"
+                            android:layout_gravity="center"
+                            android:contentDescription="UniversidadIMG" />
+
+                        <TextView
+                            android:id="@+id/txtUniversidad3"
+                            android:layout_width="100dp"
+                            android:layout_height="31dp"
+                            android:gravity="center_horizontal"
+                            android:layout_gravity="center"
+                            android:text="Universidad X"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="100dp"
+                        android:layout_height="71dp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imgNivel3"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:background="@drawable/ic_nivel"
+                            android:layout_gravity="center"
+                            android:contentDescription="UniversidadIMG" />
+
+                        <TextView
+                            android:id="@+id/txtNivel3"
+                            android:layout_width="100dp"
+                            android:layout_height="31dp"
+                            android:layout_gravity="center"
+                            android:gravity="center_horizontal"
+                            android:text="Nivel X"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Usuario y Fecha -->
+                <LinearLayout
+                    android:layout_width="200dp"
+                    android:layout_height="48dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="100dp"
+                        android:layout_height="48dp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/icon3"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:background="@drawable/avatar_default"
+                            android:layout_gravity="center"
+                            android:contentDescription="Perfil" />
+
+                        <TextView
+                            android:id="@+id/txtNombrePerfil3"
+                            android:layout_width="100dp"
+                            android:layout_height="18dp"
+                            android:gravity="center_horizontal"
+                            android:layout_gravity="center"
+                            android:text="NombrePerfil"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="100dp"
+                        android:layout_height="48dp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imgCalendario3"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:background="@drawable/ic_calendario"
+                            android:layout_gravity="center"
+                            android:contentDescription="CalendarioIMG" />
+
+                        <TextView
+                            android:id="@+id/txtCalendario3"
+                            android:layout_width="100dp"
+                            android:layout_height="18dp"
+                            android:layout_gravity="center"
+                            android:gravity="center_horizontal"
+                            android:text="Calendario x"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Calificación -->
+                <LinearLayout
+                    android:layout_width="200dp"
+                    android:layout_height="46dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_horizontal">
+
+                    <LinearLayout
+                        android:layout_width="85dp"
+                        android:layout_height="46dp"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/txtPuntaje3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="4.0 x"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"/>
+                        <TextView
+                            android:id="@+id/txtCalificacion3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Calificación"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"/>
+                    </LinearLayout>
+
+                    <RatingBar
+                        android:id="@+id/ratingBar3"
+                        android:layout_width="114dp"
+                        android:layout_height="44dp"
+                        android:numStars="5"
+                        android:stepSize="0.5"
+                        android:isIndicator="true"
+                        android:scaleX="0.4"
+                        android:scaleY="0.4" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="20dp">
+
+            <!-- Imagen de portada -->
+            <ImageView
+                android:id="@+id/imgPortada4"
+                android:layout_width="165dp"
+                android:layout_height="270dp"
+                android:scaleType="centerCrop"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/publicacion1"
+                android:contentDescription="Portada" />
+
+            <!-- Contenido derecho -->
+            <LinearLayout
+                android:layout_width="200dp"
+                android:layout_height="270dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="@drawable/bg_card"
+                android:elevation="3dp"
+                android:paddingStart="12dp">
+
+                <!-- Título -->
+                <TextView
+                    android:id="@+id/txtTitulo4"
+                    android:layout_width="187dp"
+                    android:layout_height="46dp"
+                    android:text="Matematica y Fisica"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:maxLines="2"
+                    android:ellipsize="end" />
+
+                <!-- Etiquetas y curso (chips) -->
+                <TextView
+                    android:id="@+id/txtEtiquetas4"
+                    android:layout_width="200dp"
+                    android:layout_height="51dp"
+                    android:text="Algebra Lineal, Calculo Diferencial"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:textSize="10dp"
+                    android:maxLines="2"
+                    android:ellipsize="end" />
+
+                <!-- Universidad y Nivel -->
+                <LinearLayout
+                    android:layout_width="200dp"
+                    android:layout_height="71dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="100dp"
+                        android:layout_height="71dp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imgUniversidad4"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:background="@drawable/universidad"
+                            android:layout_gravity="center"
+                            android:contentDescription="UniversidadIMG" />
+
+                        <TextView
+                            android:id="@+id/txtUniversidad4"
+                            android:layout_width="100dp"
+                            android:layout_height="31dp"
+                            android:gravity="center_horizontal"
+                            android:layout_gravity="center"
+                            android:text="Universidad X"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="100dp"
+                        android:layout_height="71dp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imgNivel4"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:background="@drawable/ic_nivel"
+                            android:layout_gravity="center"
+                            android:contentDescription="UniversidadIMG" />
+
+                        <TextView
+                            android:id="@+id/txtNivel4"
+                            android:layout_width="100dp"
+                            android:layout_height="31dp"
+                            android:layout_gravity="center"
+                            android:gravity="center_horizontal"
+                            android:text="Nivel X"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Usuario y Fecha -->
+                <LinearLayout
+                    android:layout_width="200dp"
+                    android:layout_height="48dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="100dp"
+                        android:layout_height="48dp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/icon4"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:background="@drawable/avatar_default"
+                            android:layout_gravity="center"
+                            android:contentDescription="Perfil" />
+
+                        <TextView
+                            android:id="@+id/txtNombrePerfil4"
+                            android:layout_width="100dp"
+                            android:layout_height="18dp"
+                            android:gravity="center_horizontal"
+                            android:layout_gravity="center"
+                            android:text="NombrePerfil"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="100dp"
+                        android:layout_height="48dp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imgCalendario4"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:background="@drawable/ic_calendario"
+                            android:layout_gravity="center"
+                            android:contentDescription="CalendarioIMG" />
+
+                        <TextView
+                            android:id="@+id/txtCalendario4"
+                            android:layout_width="100dp"
+                            android:layout_height="18dp"
+                            android:layout_gravity="center"
+                            android:gravity="center_horizontal"
+                            android:text="Calendario x"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Calificación -->
+                <LinearLayout
+                    android:layout_width="200dp"
+                    android:layout_height="46dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_horizontal">
+
+                    <LinearLayout
+                        android:layout_width="85dp"
+                        android:layout_height="46dp"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/txtPuntaje4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="4.0 x"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"/>
+                        <TextView
+                            android:id="@+id/txtCalificacion4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Calificación"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"/>
+                    </LinearLayout>
+
+                    <RatingBar
+                        android:id="@+id/ratingBar4"
+                        android:layout_width="114dp"
+                        android:layout_height="44dp"
+                        android:numStars="5"
+                        android:stepSize="0.5"
+                        android:isIndicator="true"
+                        android:scaleX="0.4"
+                        android:scaleY="0.4" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="20dp">
+
+            <!-- Imagen de portada -->
+            <ImageView
+                android:id="@+id/imgPortada5"
+                android:layout_width="165dp"
+                android:layout_height="270dp"
+                android:scaleType="centerCrop"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/publicacion1"
+                android:contentDescription="Portada" />
+
+            <!-- Contenido derecho -->
+            <LinearLayout
+                android:layout_width="200dp"
+                android:layout_height="270dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="@drawable/bg_card"
+                android:elevation="3dp"
+                android:paddingStart="12dp">
+
+                <!-- Título -->
+                <TextView
+                    android:id="@+id/txtTitulo5"
+                    android:layout_width="187dp"
+                    android:layout_height="46dp"
+                    android:text="Matematica y Fisica"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:maxLines="2"
+                    android:ellipsize="end" />
+
+                <!-- Etiquetas y curso (chips) -->
+                <TextView
+                    android:id="@+id/txtEtiquetas5"
+                    android:layout_width="200dp"
+                    android:layout_height="51dp"
+                    android:text="Algebra Lineal, Calculo Diferencial"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:textSize="10dp"
+                    android:maxLines="2"
+                    android:ellipsize="end" />
+
+                <!-- Universidad y Nivel -->
+                <LinearLayout
+                    android:layout_width="200dp"
+                    android:layout_height="71dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="100dp"
+                        android:layout_height="71dp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imgUniversidad5"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:background="@drawable/universidad"
+                            android:layout_gravity="center"
+                            android:contentDescription="UniversidadIMG" />
+
+                        <TextView
+                            android:id="@+id/txtUniversidad5"
+                            android:layout_width="100dp"
+                            android:layout_height="31dp"
+                            android:gravity="center_horizontal"
+                            android:layout_gravity="center"
+                            android:text="Universidad X"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="100dp"
+                        android:layout_height="71dp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imgNivel5"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:background="@drawable/ic_nivel"
+                            android:layout_gravity="center"
+                            android:contentDescription="UniversidadIMG" />
+
+                        <TextView
+                            android:id="@+id/txtNivel5"
+                            android:layout_width="100dp"
+                            android:layout_height="31dp"
+                            android:layout_gravity="center"
+                            android:gravity="center_horizontal"
+                            android:text="Nivel X"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Usuario y Fecha -->
+                <LinearLayout
+                    android:layout_width="200dp"
+                    android:layout_height="48dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="100dp"
+                        android:layout_height="48dp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/icon5"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:background="@drawable/avatar_default"
+                            android:layout_gravity="center"
+                            android:contentDescription="Perfil" />
+
+                        <TextView
+                            android:id="@+id/txtNombrePerfil5"
+                            android:layout_width="100dp"
+                            android:layout_height="18dp"
+                            android:gravity="center_horizontal"
+                            android:layout_gravity="center"
+                            android:text="NombrePerfil"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="100dp"
+                        android:layout_height="48dp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imgCalendario5"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:background="@drawable/ic_calendario"
+                            android:layout_gravity="center"
+                            android:contentDescription="CalendarioIMG" />
+
+                        <TextView
+                            android:id="@+id/txtCalendario5"
+                            android:layout_width="100dp"
+                            android:layout_height="18dp"
+                            android:layout_gravity="center"
+                            android:gravity="center_horizontal"
+                            android:text="Calendario x"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Calificación -->
+                <LinearLayout
+                    android:layout_width="200dp"
+                    android:layout_height="46dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_horizontal">
+
+                    <LinearLayout
+                        android:layout_width="85dp"
+                        android:layout_height="46dp"
+                        android:orientation="vertical"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/txtPuntaje5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="4.0 x"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"/>
+                        <TextView
+                            android:id="@+id/txtCalificacion5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Calificación"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/black"/>
+                    </LinearLayout>
+
+                    <RatingBar
+                        android:id="@+id/ratingBar5"
+                        android:layout_width="114dp"
+                        android:layout_height="44dp"
+                        android:numStars="5"
+                        android:stepSize="0.5"
+                        android:isIndicator="true"
+                        android:scaleX="0.4"
+                        android:scaleY="0.4" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
