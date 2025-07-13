@@ -64,6 +64,11 @@ dependencies {
     implementation ("com.loopj.android:android-async-http:1.4.11")
 
     implementation ("de.hdodenhof:circleimageview:3.1.0")
+    implementation ("com.google.android.flexbox:flexbox:3.0.0")
+
+    implementation ("com.github.bumptech.glide:glide:4.15.1")
+    annotationProcessor ("com.github.bumptech.glide:compiler:4.15.1")
+    implementation ("com.google.android.flexbox:flexbox:3.0.0")
 
 
 }

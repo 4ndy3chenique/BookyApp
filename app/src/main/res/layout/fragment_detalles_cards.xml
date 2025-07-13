@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollDetalle"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="12dp"
+    android:background="#FFFFFF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Imagen de portada -->
+        <ImageView
+            android:id="@+id/imgPortadaDetalle"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:contentDescription="Portada" />
+
+        <!-- Título y autor -->
+        <TextView
+            android:id="@+id/txtTituloDetalle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Título de la publicación"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:paddingTop="12dp"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/txtUsuarioDetalle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="por Andy Echenique"
+            android:textSize="14sp"
+            android:textColor="#666666"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Calificación y descargas -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            android:layout_marginBottom="12dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtLabelCalificacion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Calificación promedio"
+                    android:textSize="14sp"
+                    android:textColor="#333333" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:id="@+id/txtPuntajeDetalle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="4.0"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="#000000"
+                        android:layout_marginEnd="8dp" />
+
+                    <RatingBar
+                        android:id="@+id/ratingDetalle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:numStars="5"
+                        android:stepSize="0.5"
+                        android:isIndicator="true"
+                        android:scaleX="0.9"
+                        android:scaleY="0.9" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txtDescargas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="100 descargas"
+                android:textSize="14sp"
+                android:textColor="#000000"
+                android:layout_gravity="center_vertical" />
+        </LinearLayout>
+
+        <!-- Universidad, Nivel, Idioma -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            android:layout_marginBottom="12dp">
+
+            <TextView
+                android:id="@+id/txtUniversidadDetalle"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Universidad"
+                android:textColor="#000000"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/txtNivelDetalle"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Nivel"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                android:gravity="center" />
+
+            <TextView
+                android:id="@+id/txtIdiomaDetalle"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Idioma"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                android:gravity="end" />
+        </LinearLayout>
+
+        <!-- Descripción -->
+        <TextView
+            android:id="@+id/txtDescripcionDetalle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Descripción detallada del recurso..."
+            android:textSize="15sp"
+            android:layout_marginBottom="16dp"
+            android:textColor="#444444" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Páginas del archivo"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="6dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerPaginas"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:orientation="horizontal"
+            android:overScrollMode="never"
+            android:layout_marginBottom="16dp"
+            android:clipToPadding="false" />
+
+    </LinearLayout>
+
+</ScrollView>
